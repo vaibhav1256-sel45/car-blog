@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/Home/HeroSection";
-import { useAppDispatch, useAppSelector } from "@/hooks/ReduxHooks";
+import { useAppDispatch } from "@/hooks/ReduxHooks";
 import Layout from "@/Layout/Layout";
 import { fetchCarBlogPosts } from "@/redux/slices/carSlice";
 const BlogLayout = dynamic(() => import("@/components/Home/BlogLayout"));

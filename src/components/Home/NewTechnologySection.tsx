@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import { useAppSelector } from '@/hooks/ReduxHooks';
 import dynamic from 'next/dynamic';
 import Loader from '@/app/loading';
-import ErrorPage from '@/app/error';
 import NoDataFound from '@/app/NoDataFound';
 
  const NewTechnologySection: React.FC = () => {

@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import { useAppSelector } from "@/hooks/ReduxHooks";
 import { notFound, useParams, useRouter } from "next/navigation";
 import Layout from "@/Layout/Layout";
-
 const SpecificationsCard = dynamic(() => import('@/components/details/SpecificationsCard'));
 
 export default function DetailPage() {
