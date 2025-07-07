@@ -22,7 +22,7 @@ export default function ContactForm() {
 
   const [showAlert, setShowAlert] = useState(false);
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = () => {
     setShowAlert(true);
     reset();
     setTimeout(() => setShowAlert(false), 4000);

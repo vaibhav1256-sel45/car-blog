@@ -17,18 +17,18 @@ export default function Footer() {
             Your ultimate source for car reviews, news, and automotive tips. Stay updated with the latest trends and insights.
           </p>
           <div className="flex space-x-4 mt-4">
-            <a href="#" aria-label="Facebook" className="hover:text-indigo-400 transition">
+            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-indigo-400 transition">
               <FaFacebookF size={20} />
-            </a>
-            <a href="#" aria-label="Twitter" className="hover:text-indigo-400 transition">
+            </Link>
+            <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-indigo-400 transition">
               <FaTwitter size={20} />
-            </a>
-            <a href="#" aria-label="Instagram" className="hover:text-indigo-400 transition">
+            </Link>
+            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-indigo-400 transition">
               <FaInstagram size={20} />
-            </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-indigo-400 transition">
+            </Link>
+            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-indigo-400 transition">
               <FaLinkedinIn size={20} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
                 Home
               </Link>
             </li>
-              <li>
+            <li>
               <Link href="/blogs" className="hover:text-indigo-400 transition">
                 Blogs
               </Link>
@@ -65,8 +65,8 @@ export default function Footer() {
           <address className="not-italic space-y-2 text-gray-400 text-sm">
             <p>1234 Auto Lane</p>
             <p>Car City, CA 90210</p>
-            <p>Phone: <a href="tel:+1234567890" className="hover:text-indigo-400">+1 (234) 567-890</a></p>
-            <p>Email: <a href="mailto:info@carblog.com" className="hover:text-indigo-400">info@carblog.com</a></p>
+            <p>Phone: <Link href="tel:+1234567890" className="hover:text-indigo-400">+1 (234) 567-890</Link></p>
+            <p>Email: <Link href="mailto:info@carblog.com" className="hover:text-indigo-400">info@carblog.com</Link></p>
           </address>
         </div>
 

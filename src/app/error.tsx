@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import { FaExclamationTriangle, FaRedo } from "react-icons/fa";
 
 export default function ErrorPage({ message = "Something went wrong." }) {
@@ -17,12 +18,12 @@ export default function ErrorPage({ message = "Something went wrong." }) {
           <FaRedo className="w-5 h-5" />
           Retry
         </button>
-        <a
+        <Link
           href="/"
           className="text-indigo-500 hover:underline text-sm"
         >
           Go back to Home
-        </a>
+        </Link>
       </div>
     </div>
   );
