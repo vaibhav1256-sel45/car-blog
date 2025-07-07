@@ -4,7 +4,7 @@ import { FaExclamationTriangle, FaRedo } from "react-icons/fa";
 
 export default function ErrorPage({ message = "Something went wrong." }) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-200 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center  via-white to-slate-200 px-4">
       <div className="bg-white rounded-3xl shadow-2xl p-10 flex flex-col items-center max-w-md w-full">
         <FaExclamationTriangle className="text-red-500 text-6xl mb-6" />
         <h1 className="text-3xl font-bold text-slate-800 mb-2">Oops!</h1>

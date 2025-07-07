@@ -3,14 +3,13 @@ import { useState, useMemo, useEffect } from "react";
 import { useAppSelector } from "@/hooks/ReduxHooks";
 import Layout from "@/Layout/Layout";
 import Loader from "@/app/loading";
-import ErrorPage from "@/app/error";
 import InfiniteScroll from "react-infinite-scroll-component";
-
 const FilterBar=dynamic(()=>import("@/components/Filters/FilterBar"))
 import { CarBlogPost } from "@/types/Cartypes";
 const CardList =dynamic(()=>import("@/components/Blogs/CarList")) ;
 import HeroSection from "@/components/Blogs/HeroSection";
 import dynamic from "next/dynamic";
+import NoDataFound from "../NoDataFound";
 
 function Page() {
   const data = useAppSelector(state => state.carBlogPosts);
@@ -18,11 +17,8 @@ function Page() {
   const [visibleCount, setVisibleCount] = useState(limit);
 
   const [filteredPosts, setFilteredPosts] = useState<CarBlogPost[]>([]);
-  // Filter states
   const [selectedTag, setSelectedTag] = useState("");
   const [search, setSearch] = useState("");
-
-  // Get unique tags from posts
   const tags = useMemo(() => {
     const set = new Set<string>();
     data.posts.forEach((p) => {
@@ -32,7 +28,6 @@ function Page() {
     return Array.from(set);
   }, [data.posts]);
 
-  // Get Suggestions
   const suggestions = useMemo(() => {
     const set = new Set<string>();
     data.posts.forEach((p) => {
@@ -66,8 +61,7 @@ function Page() {
     }, 1500);
   };
 
-  if (data.status === 'loading') return <Loader scrolling={false} />;
-  if (data.error) return <ErrorPage />;
+ 
 
   return (
     <Layout>
@@ -86,35 +80,7 @@ function Page() {
             <p className="text-1xl font-bold">{filteredPosts.length} Articles Found</p>
           </div>
           {filteredPosts.length <= 0 ? (
-            <div className="flex flex-col items-center justify-center py-16">
-              <svg
-                className="w-24 h-24 text-indigo-300 mb-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                viewBox="0 0 48 48"
-              >
-                <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="3" fill="#EEF2FF" />
-                <path
-                  d="M17 21h14M17 29h10"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <ellipse cx="24" cy="24" rx="20" ry="8" fill="#C7D2FE" opacity="0.3" />
-                <path
-                  d="M24 34a10 10 0 100-20 10 10 0 000 20z"
-                  fill="#6366F1"
-                  opacity="0.15"
-                />
-              </svg>
-              <h4 className="text-2xl font-bold text-indigo-700 mb-2">No Articles Found</h4>
-              <p className="text-gray-500 text-center max-w-md">
-                We couldn&apos;t find any articles matching your search or selected tag.<br />
-                Try adjusting your filters or search for something else!
-              </p>
-            </div>
+          <NoDataFound/>
           ) : (
             <InfiniteScroll
               dataLength={Math.min(visibleCount, filteredPosts.length)}

@@ -3,10 +3,15 @@ const TechnologyCard =dynamic(()=>import( './TechnologyCard'));
 import { useRouter } from 'next/navigation';
 import { useAppSelector } from '@/hooks/ReduxHooks';
 import dynamic from 'next/dynamic';
+import Loader from '@/app/loading';
+import ErrorPage from '@/app/error';
+import NoDataFound from '@/app/NoDataFound';
 
  const NewTechnologySection: React.FC = () => {
-  const technologyPosts = useAppSelector(state=>state.carBlogPosts.posts)
+  const data = useAppSelector(state=>state.carBlogPosts)
+ const technologyPosts=data.posts
   const router=useRouter();
+
   return (
     <section className="">
       <div className="">
@@ -18,15 +23,22 @@ import dynamic from 'next/dynamic';
           </button>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {technologyPosts.slice(0,4).map((post, index) => (
-            <TechnologyCard
-              key={index}
-              {...post}
-              className="hover:transform hover:-translate-y-1 transition-transform duration-300"
-            />
-          ))}
-        </div>
+     {data?.status === 'loading' ? (
+  <Loader scrolling={true} />
+) : data.error || !technologyPosts || technologyPosts.length === 0 ? (
+<NoDataFound/>
+) : (
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {technologyPosts.slice(0, 4).map((post, index) => (
+      <TechnologyCard
+        key={index}
+        {...post}
+        className="hover:transform hover:-translate-y-1 transition-transform duration-300"
+      />
+    ))}
+  </div>
+)}
+
       </div>
     </section>
   );
