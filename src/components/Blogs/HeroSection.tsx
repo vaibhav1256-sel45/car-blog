@@ -9,7 +9,7 @@ export  default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left Side - Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-4 mt-10">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 Your Journey
               </h1>
