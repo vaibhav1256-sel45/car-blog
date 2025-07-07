@@ -1,5 +1,6 @@
 import React from 'react';
 import { BlogCard } from './BlogCard';
+import { useRouter } from 'next/navigation';
 
 export const BlogLayout: React.FC = () => {
   const featuredPost = {
@@ -36,7 +37,7 @@ export const BlogLayout: React.FC = () => {
       variant: 'trending' as const
     }
   ];
-
+ const router=useRouter()
   return (
     <div>
       <div className=" py-8">
@@ -57,7 +58,7 @@ export const BlogLayout: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-gray-900">Trending Blogs</h2>
-              <button className="text-red-600 hover:text-red-800 font-medium text-sm transition-colors">
+              <button className="text-red-600 hover:text-red-800 font-medium text-sm transition-colors" onClick={()=>router.push('/blogs')}>
                 See all
               </button>
             </div>

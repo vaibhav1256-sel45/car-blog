@@ -1,7 +1,7 @@
 'use client'
 import { useState, useMemo, useEffect } from "react";
 
-import { useAppDispatch, useAppSelector } from "@/hooks/ReduxHooks";
+import { useAppSelector } from "@/hooks/ReduxHooks";
 import Layout from "@/Layout/Layout";
 import { fetchCarBlogPosts } from "@/redux/slices/carSlice";
 import Loader from "@/app/loading";
@@ -17,16 +17,13 @@ function page() {
       const data = useAppSelector(state => state.carBlogPosts);
       const limit = 9;
       const [visibleCount, setVisibleCount] = useState(limit);
-      const dispatch = useAppDispatch();
+      
       const [filteredPosts,setFilteredPosts]=useState<CarBlogPost[]>([])
       // Filter states
       const [selectedTag, setSelectedTag] = useState("");
       const [search, setSearch] = useState("");
     
-      useEffect(() => {
-        dispatch(fetchCarBlogPosts());
-      }, [dispatch]);
-       
+   
       //
     
       // Get unique tags from posts

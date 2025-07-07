@@ -1,29 +1,27 @@
+import { CarBlogPost } from '@/types/Cartypes';
+import { useRouter } from 'next/navigation';
 import React from 'react';
-import { FiUser, FiHeart, FiMessageCircle } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
 
 
-interface TechnologyCardProps {
-  title: string;
-  author: {
-    name: string;
-    avatar?: string;
-    date: string;
-  };
-  image: string;
-  className?: string;
+interface technology extends CarBlogPost{
+  className:string
 }
 
-export const TechnologyCard: React.FC<TechnologyCardProps> = ({
+export const TechnologyCard: React.FC<technology> = ({
+  id,
   title,
   author,
-  image,
-  className = ''
+  thumbnail,
+  className = '',
+  date
 }) => {
+  const router=useRouter()
   return (
-    <article className={`bg-[#F4F0F8] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group ${className} mb-5`}>
+    <article className={`bg-[#F4F0F8] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group ${className} mb-5 cursor-pointer`} onClick={()=>router.push(`/details/${id}`)}>
       <div className="relative overflow-hidden flex justify-center mt-5">
         <img 
-          src={image} 
+          src={thumbnail} 
           alt={title}
           className="w-[90%] h-48 rounded-xl object-cover group-hover:scale-105 transition-transform duration-300"
         />
@@ -38,15 +36,12 @@ export const TechnologyCard: React.FC<TechnologyCardProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-              {author.avatar ? (
-                <img src={author.avatar} alt={author.name} className="w-full h-full rounded-full object-cover" />
-              ) : (
+             
                 <FiUser className="w-4 h-4 text-white" />
-              )}
             </div>
             <div>
-              <p className="font-medium text-gray-900 text-sm">{author.name}</p>
-              <p className="text-gray-500 text-xs">{author.date}</p>
+              <p className="font-medium text-gray-900 text-sm">{author}</p>
+              <p className="text-gray-500 text-xs">{date}</p>
             </div>
           </div>
           
