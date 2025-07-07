@@ -48,7 +48,7 @@ export default function DetailPage() {
       <div className="min-h-screen mt-20">
         <div className="max-w-7xl mx-auto px-4 py-8">
           {/* Row-wise flex layout */}
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col-reverse md:flex-row gap-8">
             {/* Left: Specifications Card */}
             <div className="md:w-1/3 w-full">
               <div className="sticky top-8 space-y-6">
