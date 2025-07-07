@@ -1,12 +1,15 @@
 'use client'
 import { FaCalendarAlt, FaUser, FaStar, FaTag } from "react-icons/fa";
-const SpecificationsCard =dynamic(()=>import( '@/components/details/SpecificationsCard'));
-import { useAppSelector } from "@/hooks/ReduxHooks";
-import { notFound, useParams } from "next/navigation";
-import Layout from "@/Layout/Layout";
 import dynamic from "next/dynamic";
+import { useAppSelector } from "@/hooks/ReduxHooks";
+import { notFound, useParams, useRouter } from "next/navigation";
+import Layout from "@/Layout/Layout";
+
+const SpecificationsCard = dynamic(() => import('@/components/details/SpecificationsCard'));
 
 export default function DetailPage() {
+  const router = useRouter();
+
   const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -48,6 +51,18 @@ export default function DetailPage() {
     <Layout>
       <div className="min-h-screen mt-20">
         <div className="max-w-7xl mx-auto px-4 py-8">
+          {/* Back Button */}
+          <button
+            onClick={() => router.push("/")}
+            className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg shadow transition"
+          >
+            {/* Left arrow icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Home
+          </button>
+
           {/* Row-wise flex layout */}
           <div className="flex flex-col-reverse md:flex-row gap-8">
             {/* Left: Specifications Card */}
@@ -188,7 +203,6 @@ export default function DetailPage() {
           
           </div>
          
-          
         </div>
       </div>
     </Layout>
