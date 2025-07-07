@@ -5,7 +5,7 @@ import type { CarBlogPost } from '@/types/Cartypes';
 export const fetchCarBlogPosts = createAsyncThunk<CarBlogPost[]>(
   'carBlogPosts/fetchAll',
   async () => {
-    const response = await fetch('http://172.50.3.32:3001/api/cars'); 
+    const response = await fetch('https://car-backend-amber.vercel.app/api/cars'); 
     if (!response.ok) throw new Error('Failed to fetch car blog posts');
     return response.json();
   }
