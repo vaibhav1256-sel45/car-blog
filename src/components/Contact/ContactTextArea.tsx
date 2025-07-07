@@ -1,6 +1,5 @@
 // components/contact/ContactTextarea.tsx
 import { FieldError, UseFormRegister } from "react-hook-form";
-
 type Props = {
   label: string;
   name: string;

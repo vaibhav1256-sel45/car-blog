@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { CarBlogPost } from '@/types/Cartypes';
 
 // Example async thunk for fetching posts from an API
