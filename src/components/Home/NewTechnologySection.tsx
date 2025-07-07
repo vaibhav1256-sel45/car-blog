@@ -1,9 +1,10 @@
 import React from 'react';
-import { TechnologyCard } from './TechnologyCard';
+const TechnologyCard =dynamic(()=>import( './TechnologyCard'));
 import { useRouter } from 'next/navigation';
 import { useAppSelector } from '@/hooks/ReduxHooks';
+import dynamic from 'next/dynamic';
 
-export const NewTechnologySection: React.FC = () => {
+ const NewTechnologySection: React.FC = () => {
   const technologyPosts = useAppSelector(state=>state.carBlogPosts.posts)
   const router=useRouter();
   return (
@@ -30,3 +31,4 @@ export const NewTechnologySection: React.FC = () => {
     </section>
   );
 };
+export default NewTechnologySection

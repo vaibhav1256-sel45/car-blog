@@ -28,7 +28,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title, description, c
   );
 };
 
-export const CategorySection: React.FC = () => {
+ const CategorySection: React.FC = () => {
   const categories = [
     {
       icon: <MdDirectionsCar className="w-8 h-8" />,
@@ -75,3 +75,4 @@ export const CategorySection: React.FC = () => {
     </section>
   );
 };
+export default CategorySection

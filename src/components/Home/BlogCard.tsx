@@ -11,7 +11,7 @@ interface BlogCardProps {
   className?: string;
 }
 
-export const BlogCard: React.FC<BlogCardProps> = ({
+const BlogCard: React.FC<BlogCardProps> = ({
   title,
   author,
   date,
@@ -76,3 +76,4 @@ export const BlogCard: React.FC<BlogCardProps> = ({
     </article>
   );
 };
+export default BlogCard

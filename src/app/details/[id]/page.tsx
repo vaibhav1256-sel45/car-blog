@@ -1,9 +1,10 @@
 'use client'
 import { FaCalendarAlt, FaUser, FaStar, FaTag } from "react-icons/fa";
-import SpecificationsCard from '@/components/details/SpecificationsCard';
+const SpecificationsCard =dynamic(()=>import( '@/components/details/SpecificationsCard'));
 import { useAppSelector } from "@/hooks/ReduxHooks";
 import { notFound, useParams } from "next/navigation";
 import Layout from "@/Layout/Layout";
+import dynamic from "next/dynamic";
 
 export default function DetailPage() {
   const renderStars = (rating: number) => {

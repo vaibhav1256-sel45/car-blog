@@ -1,6 +1,5 @@
 'use client'
 import SearchBar from "./SearchBar";
-
 interface FilterBarProps {
   tags: string[];
   selectedTag: string;

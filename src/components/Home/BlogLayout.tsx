@@ -1,8 +1,9 @@
 import React from 'react';
-import { BlogCard } from './BlogCard';
+const  BlogCard=dynamic(()=>import('./BlogCard'));
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
-export const BlogLayout: React.FC = () => {
+ const BlogLayout: React.FC = () => {
   const featuredPost = {
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
     author: "John Doe",
@@ -77,3 +78,4 @@ export const BlogLayout: React.FC = () => {
     </div>
   );
 };
+export default BlogLayout

@@ -8,7 +8,7 @@ interface technology extends CarBlogPost{
   className:string
 }
 
-export const TechnologyCard: React.FC<technology> = ({
+const TechnologyCard: React.FC<technology> = ({
   id,
   title,
   author,
@@ -58,3 +58,4 @@ export const TechnologyCard: React.FC<technology> = ({
     </article>
   );
 };
+export  default TechnologyCard

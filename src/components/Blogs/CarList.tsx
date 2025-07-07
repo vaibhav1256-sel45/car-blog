@@ -1,6 +1,7 @@
 // components/CardList.tsx
 import { CarBlogPost } from "@/types/Cartypes";
-import Card from "./Card";
+import dynamic from "next/dynamic";
+const Card =dynamic(()=>import("./Card")) ;
 
 type CardListProps = {
   cards: CarBlogPost[];

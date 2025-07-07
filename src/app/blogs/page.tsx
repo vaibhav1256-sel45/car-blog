@@ -5,10 +5,12 @@ import Layout from "@/Layout/Layout";
 import Loader from "@/app/loading";
 import ErrorPage from "@/app/error";
 import InfiniteScroll from "react-infinite-scroll-component";
-import FilterBar from "@/components/Filters/FilterBar";
+
+const FilterBar=dynamic(()=>import("@/components/Filters/FilterBar"))
 import { CarBlogPost } from "@/types/Cartypes";
-import CardList from "@/components/Blogs/CarList";
+const CardList =dynamic(()=>import("@/components/Blogs/CarList")) ;
 import HeroSection from "@/components/Blogs/HeroSection";
+import dynamic from "next/dynamic";
 
 function Page() {
   const data = useAppSelector(state => state.carBlogPosts);
