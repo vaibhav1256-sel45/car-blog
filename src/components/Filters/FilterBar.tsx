@@ -36,8 +36,8 @@ export default function FilterBar({
         <button
           className={`px-4 py-2 rounded-full font-semibold transition 
             ${selectedTag === "" 
-              ? "bg-slate-500 text-white shadow" 
-              : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+              ? "bg-red-500 text-white shadow" 
+              : "bg-red-100 text-slate-700 hover:bg-red-200"}`}
           onClick={() => onTagSelect("")}
         >
           All
@@ -47,8 +47,8 @@ export default function FilterBar({
             key={tag}
             className={`px-4 py-2 rounded-full font-semibold transition
               ${selectedTag === tag
-                ? "bg-slate-500 text-white shadow"
-                : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+                ? "bg-red-500 text-white shadow"
+                : "bg-red-100 text-slate-700 hover:bg-red-200"}`}
             onClick={() => onTagSelect(tag)}
           >
             {tag}

@@ -31,10 +31,19 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-3xl bg-[#232536] p-8 rounded-xl shadow-lg"
+       className="
+     w-full
+    max-w-full
+    sm:max-w-xl
+    md:max-w-2xl
+    lg:max-w-3xl
+    bg-[#232536]
+    p-4 sm:p-6 md:p-8
+    rounded-xl shadow-lg mx-auto
+    flex flex-col justify-center
+  "
       noValidate
     >
-      
       <ContactInput
         label="Name"
         name="name"
@@ -93,18 +102,20 @@ export default function ContactForm() {
           maxLength: { value: 1000, message: "Message must be at most 1000 characters" },
         }}
       />
-     <div className="w-full py-2 rounded bg-red-600 hover:bg-indigo-700 text-white font-semibold transition mt-4 flex justify-center align-center gap-2">
-       <span className="mt-1"> <FiSend/></span>
-       <button
+
+      <button
         type="submit"
-        
+        className="w-full flex items-center justify-center gap-2 py-3 rounded bg-gradient-to-r from-indigo-600 to-indigo-800 hover:from-red-600 hover:to-red-700 text-white font-semibold transition-all duration-200 mt-4 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
       >
-       Send Message
+        <FiSend className="text-lg" />
+        <span>Send Message</span>
       </button>
-     
-      </div>
+
       {showAlert && (
-        <div className="mt-6 p-4 rounded bg-green-600 text-white text-center font-semibold shadow animate-fade-in">
+        <div
+          className="mt-6 p-4 rounded bg-green-600 text-white text-center font-semibold shadow animate-fade-in"
+          aria-live="polite"
+        >
           Thank you! Your message has been sent.
         </div>
       )}
