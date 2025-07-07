@@ -1,10 +1,9 @@
 'use client'
-import { FaCalendarAlt, FaUser, FaStar, FaTag, FaArrowLeft } from "react-icons/fa";
+import { FaCalendarAlt, FaUser, FaStar, FaTag } from "react-icons/fa";
 import SpecificationsCard from '@/components/details/SpecificationsCard';
 import { useAppSelector } from "@/hooks/ReduxHooks";
 import { notFound, useParams } from "next/navigation";
 import Layout from "@/Layout/Layout";
-import Card from "@/components/Blogs/Card";
 
 export default function DetailPage() {
   const renderStars = (rating: number) => {

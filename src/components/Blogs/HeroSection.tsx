@@ -5,7 +5,7 @@ import { FiSend } from 'react-icons/fi';
 export  default function HeroSection() {
   return (
     <section className="relative lg:max-h-[88vh] bg-[#31323C] text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto  py-16 ">
+      <div className="max-w-7xl mx-auto  py-16 px-4 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left Side - Content */}
           <div className="space-y-8">

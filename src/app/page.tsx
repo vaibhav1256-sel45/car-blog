@@ -1,6 +1,5 @@
 'use client'
-import { useState, useMemo, useEffect } from "react";
-import CardList from "@/components/Blogs/CarList";
+import {  useEffect } from "react";
 import HeroSection from "@/components/Home/HeroSection";
 import { useAppDispatch, useAppSelector } from "@/hooks/ReduxHooks";
 import Layout from "@/Layout/Layout";

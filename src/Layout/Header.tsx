@@ -91,14 +91,14 @@ export default function Header() {
           navOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col items-center py-4 space-y-2 w-full">
+        <div className="flex flex-col  py-4 space-y-2 w-full">
           {navLinks.map(({ href, label }) => {
             const isActive = pathname === href;
             return (
               <Link
                 key={href}
                 href={href}
-                className={`w-full text-center py-2 text-lg font-semibold rounded transition-all duration-200
+                className={`w-full px-6 py-2 text-lg font-semibold rounded transition-all duration-200
                   ${isActive ? "text-white" : "text-gray-400"} hover:bg-indigo-700`}
                 onClick={() => setNavOpen(false)}
               >
@@ -108,7 +108,7 @@ export default function Header() {
           })}
           <button
             type="submit"
-            className="px-6 py-2 rounded-full bg-white hover:bg-indigo-700 font-semibold transition"
+            className="px-6 py-2 mx-5 rounded-full bg-white hover:bg-indigo-700 font-semibold transition w-[40%]"
           >
             Subscribe
           </button>

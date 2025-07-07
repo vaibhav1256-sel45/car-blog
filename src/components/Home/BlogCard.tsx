@@ -16,7 +16,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   author,
   date,
   excerpt,
-  image,
+
   variant = 'trending',
   className = ''
 }) => {

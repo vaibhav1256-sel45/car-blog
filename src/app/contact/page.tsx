@@ -1,7 +1,6 @@
 import ContactForm from "@/components/Contact/ContactForm";
 import Layout from "@/Layout/Layout";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
-
 export default function ContactPage() {
   return (
     <Layout>

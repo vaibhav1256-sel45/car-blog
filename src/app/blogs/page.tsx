@@ -1,9 +1,7 @@
 'use client'
 import { useState, useMemo, useEffect } from "react";
-
 import { useAppSelector } from "@/hooks/ReduxHooks";
 import Layout from "@/Layout/Layout";
-import { fetchCarBlogPosts } from "@/redux/slices/carSlice";
 import Loader from "@/app/loading";
 import ErrorPage from "@/app/error";
 import InfiniteScroll from "react-infinite-scroll-component";
